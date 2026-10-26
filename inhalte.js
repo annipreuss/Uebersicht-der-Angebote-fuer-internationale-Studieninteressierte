@@ -447,7 +447,7 @@ window.HZB_INHALTE = {
           }
         },
 		{
-          text: "Nein, ich habe noch keinen TestAS erfolgreich abgelegt.",
+          text: "Nein, ich habe den TestAS noch nicht erfolgreich abgelegt.",
           weiter: "testas-hka",
           erklaerung: {
             bereich: "Teilnahmeform",
