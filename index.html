@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Übersicht: Angebote für internationale Studieninteressierte</title>
+
+    <!-- Das Aussehen der Seite steht vollständig in style.css. -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <main class="seite">
+      <header class="seitenkopf">
+        <p class="kicker" id="kicker"></p>
+        <h1 id="seitentitel"></h1>
+        <p class="einleitung" id="einleitung"></p>
+      </header>
+
+      <!--
+        In dieser Karte zeigt JavaScript immer genau eine Frage oder ein Ergebnis.
+        Die fachlichen Inhalte stehen nicht hier, sondern in inhalte.js.
+      -->
+      <section class="fragekarte" id="fragekarte" aria-live="polite">
+        <div class="navigation">
+          <button class="textbutton" id="zurueck" type="button" hidden>
+            <span aria-hidden="true">←</span> Zurück
+          </button>
+
+          <p class="fortschritt" id="fortschritt"></p>
+
+          <button class="textbutton" id="neustart" type="button" hidden>
+			<svg xmlns="http://www.w3.org/2000/svg"
+				width="22" height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="var(--rot)"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true">
+			  <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/>
+              <path d="M21 3v5h-5"/>
+              <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/>
+              <path d="M8 16H3v5"/>
+			  </svg>
+            Zurück zum Anfang
+          </button>
+        </div>
+
+        <div id="fragenansicht">
+          <p class="bereich" id="bereich"></p>
+
+          <div class="fragenkopf">
+            <h2 id="frage" tabindex="-1"></h2>
+
+            <button class="infobutton infobutton--frage" id="frageninfo" type="button" hidden>
+              <span aria-hidden="true">ⓘ</span> Was bedeutet das?
+            </button>
+          </div>
+
+          <div class="antworten" id="antworten"></div>
+        </div>
+
+        <article class="ergebnis" id="ergebnis" hidden>
+          <p class="bereich" id="ergebnis-bereich"></p>
+          <h2 id="ergebnis-titel" tabindex="-1"></h2>
+          <p class="ergebnistext" id="ergebnis-text"></p>
+          <a class="ergebnislink" id="ergebnis-link" target="_blank" rel="noopener noreferrer" hidden></a>
+        </article>
+      </section>
+    </main>
+
+    <!-- Seitliches Fenster für Erklärungen, ohne eine Antwort auszuwählen. -->
+    <dialog class="dialog" id="erklaerungsdialog" aria-labelledby="dialog-titel">
+      <button class="dialog-schliessen" id="dialog-schliessen" type="button" aria-label="Erklärung schließen">
+        ×
+      </button>
+
+      <div class="dialog-inhalt">
+        <p class="bereich" id="dialog-bereich"></p>
+        <h2 id="dialog-titel"></h2>
+        <div class="dialog-text" id="dialog-text"></div>
+        <div id="dialog-zusatz"></div>
+        <a class="ergebnislink" id="dialog-link" target="_blank" rel="noopener noreferrer" hidden></a>
+      </div>
+    </dialog>
+
+    <!-- Zuerst werden die Inhalte, danach die Funktionen geladen. -->
+    <script src="inhalte.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

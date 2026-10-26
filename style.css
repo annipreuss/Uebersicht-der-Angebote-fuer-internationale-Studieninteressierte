@@ -1,0 +1,666 @@
+/* ================================================================
+   GRUNDEINSTELLUNGEN
+   Hier lassen sich die wichtigsten Farben zentral ändern.
+   ================================================================ */
+
+
+/* GT Pressura Regular */
+@font-face {
+  font-family: "GT Pressura";
+  src: url("./fonts/GT-Pressura-LG-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* GT Pressura Light */
+@font-face {
+  font-family: "GT Pressura";
+  src: url("./fonts/GT-Pressura-LG-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* GT Pressura Bold */
+@font-face {
+  font-family: "GT Pressura";
+  src: url("./fonts/GT-Pressura-LG-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --rot: #d72305;
+  --rot-dunkel: #c22d0b;
+  --text: #171716;
+  --text-dezent: #5c5c57;
+  --hintergrund: #f8f8f6;
+  --weiss: #ffffff;
+  --linie: #dadad5;
+  --fokus: rgba(215, 35, 5, 0.2);
+  --schrift: "IBM Plex Sans";
+  --schrift-ueberschrift: "GT Pressura";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--hintergrund);
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background:
+    linear-gradient(90deg, var(--rot) 0 7px, transparent 7px),
+    var(--hintergrund);
+  color: var(--text);
+  font-family: var(--schrift);
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ================================================================
+   SEITENAUFBAU
+   ================================================================ */
+
+.seite {
+  width: min(100% - 40px, 940px);
+  margin: 0 auto;
+  padding: 46px 0 70px;
+}
+
+.seitenkopf {
+  margin-bottom: 24px;
+}
+
+.kicker,
+.bereich {
+  margin: 0 0 8px;
+  color: var(--rot-dunkel);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.seitenkopf h1 {
+  max-width: 850px;
+  margin: 0;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.einleitung {
+  max-width: 720px;
+  margin: 15px 0 0;
+  color: var(--text-dezent);
+  font-size: 1.3rem;
+  line-height: 1.55;
+}
+
+/* ================================================================
+   FRAGEKARTE UND NAVIGATION
+   ================================================================ */
+
+.fragekarte {
+  min-height: 430px;
+  padding: 30px;
+  border: 1px solid var(--linie);
+  border-top: 6px solid var(--rot);
+  border-radius: 10px;
+  background: var(--weiss);
+  box-shadow: 0 18px 50px rgba(20, 20, 18, 0.09);
+}
+
+.navigation {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+  min-height: 42px;
+  margin-bottom: 34px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #dededa;
+}
+
+.textbutton {
+  width: max-content;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.textbutton:hover,
+.textbutton:focus-visible {
+  background: #fbe9e6;
+  outline: 3px solid var(--fokus);
+}
+
+#neustart {
+  justify-self: end;
+}
+
+.fortschritt {
+  display: none !important;
+  margin: 0;
+  color: var(--text-dezent);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.fragenkopf {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.fragenkopf h2,
+.ergebnis h2 {
+  max-width: 700px;
+  margin: 0;
+  font-size: clamp(1.55rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.14;
+}
+
+.fragenkopf h2:focus,
+.ergebnis h2:focus {
+  outline: none;
+}
+
+/* ================================================================
+   ANTWORTEN
+   Jede Antwort besteht aus einer Auswahl- und einer Erklärungstaste.
+   ================================================================ */
+
+.antworten {
+  display: grid;
+  gap: 13px;
+}
+
+.antwortkarte {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 9px;
+}
+
+.antwortbutton {
+  min-height: 66px;
+  padding: 15px 18px;
+  border: 1.8px solid #252523;
+  border-radius: 6px;
+  background: var(--weiss);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.antwortbutton::after {
+  content: "→";
+  float: right;
+  margin-left: 18px;
+  color: var(--rot);
+  font-size: 2.5rem;
+}
+
+.antwortbutton:hover,
+.antwortbutton:focus-visible {
+  border-color: var(--rot);
+  background: #fdf0ee;
+  outline: 3px solid var(--fokus);
+  outline-offset: 2px;
+  transform: translateY(-1px);
+}
+
+.infobutton {
+  min-width: 132px;
+  padding: 10px 13px;
+  border: 1px solid #aaa9a3;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #333330;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.infobutton:hover,
+.infobutton:focus-visible {
+  border-color: var(--rot);
+  color: var(--rot-dunkel);
+  outline: 3px solid var(--fokus);
+  outline-offset: 2px;
+}
+
+.infobutton--frage {
+  flex: 0 0 auto;
+}
+
+/* ================================================================
+   ERGEBNISSE
+   ================================================================ */
+
+.ergebnis {
+  padding: 4px 2px 8px;
+}
+
+.ergebnis::before {
+  display: block;
+  width: 54px;
+  height: 7px;
+  margin-bottom: 24px;
+  border-radius: 999px;
+  background: var(--ergebnisfarbe, var(--rot));
+  content: "";
+}
+
+.ergebnistext {
+  max-width: none;
+  margin: 19px 0 0;
+  color: #3f3f3c;
+  font-size: 1.05rem;
+  line-height: 1.62;
+  white-space: pre-line;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.ergebnislink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 24px;
+  padding: 10px 16px;
+  border: 1.5px solid #181817;
+  border-radius: 5px;
+  background: var(--weiss);
+  color: #181817;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.ergebnislink:hover,
+.ergebnislink:focus-visible {
+  background: #fbe9e6;
+  outline: 3px solid var(--fokus);
+  outline-offset: 2px;
+}
+
+/* ================================================================
+   SEITLICHES ERKLÄRUNGSFENSTER
+   ================================================================ */
+
+.dialog {
+  width: min(94vw, 720px);
+  max-width: none;
+  height: 100vh;
+  max-height: 100vh;
+  margin: 0 0 0 auto;
+  padding: 0;
+  border: 0;
+  border-left: 1px solid var(--linie);
+  background: var(--weiss);
+  box-shadow: -20px 0 55px rgba(20, 20, 18, 0.18);
+}
+
+.dialog::backdrop {
+  background: rgba(0, 0, 0, 0.48);
+}
+
+.dialog[open] {
+  animation: einschieben 0.2s ease-out;
+}
+
+.dialog-schliessen {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #d2d2ce;
+  border-radius: 50%;
+  background: var(--weiss);
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.dialog-schliessen:hover,
+.dialog-schliessen:focus-visible {
+  border-color: var(--rot);
+  outline: 3px solid var(--fokus);
+}
+
+.dialog-inhalt {
+  padding: 64px 36px 46px;
+}
+
+.dialog-inhalt h2 {
+  max-width: 590px;
+  margin: 0;
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  line-height: 1.1;
+}
+
+.dialog-text {
+  margin-top: 20px;
+  color: #3f3f3c;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+/* Die besondere Darstellung der direkten und indirekten HZB. */
+.uebersicht {
+  display: grid;
+  gap: 18px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 5px solid var(--rot);
+}
+
+.uebersicht--indirekt {
+  border-top-color: #var(--rot);
+}
+
+.uebersicht-status {
+  margin: 0;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.uebersicht-einleitung,
+.uebersicht-zusammenfassung,
+.uebersicht-zusatz {
+  margin: 0;
+  color: #464642;
+  line-height: 1.55;
+}
+
+.region {
+  padding: 14px 15px;
+  border-left: 4px solid var(--rot);
+  background: #fbe9e6;
+}
+
+.uebersicht--indirekt .region {
+  border-left-color: #555550;
+  background: #ededeb;
+}
+
+.region > p {
+  margin: 0 0 10px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.regionen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.regionschip {
+  padding: 6px 9px;
+  border: 1px solid rgba(21, 21, 20, 0.34);
+  border-radius: 999px;
+  background: var(--weiss);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.ablauf {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: schritt;
+}
+
+.ablauf li {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  counter-increment: schritt;
+}
+
+.ablauf li::before {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 1.5px solid #111;
+  border-radius: 50%;
+  background: var(--weiss);
+  content: counter(schritt);
+  font-size: 0.78rem;
+}
+
+.wege {
+  display: grid;
+  gap: 8px;
+}
+
+.weg {
+  padding: 11px 13px;
+  border: 1px solid #b9b9b4;
+  border-radius: 5px;
+  background: #f7f7f5;
+  line-height: 1.4;
+}
+
+.hinweisbox {
+  padding: 14px 16px;
+  border: 1px solid var(--linie);
+  border-radius: 6px;
+  background: #f5f5f3;
+  color: #3f3f3c;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.hinweisbox a {
+  color: var(--rot-dunkel);
+  font-weight: 700;
+}
+
+@keyframes einschieben {
+  from {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ================================================================
+   DARSTELLUNG AUF KLEINEN BILDSCHIRMEN
+   ================================================================ */
+
+@media (max-width: 650px) {
+  body {
+    background:
+      linear-gradient(90deg, var(--rot) 0 5px, transparent 5px),
+      var(--hintergrund);
+  }
+
+  .seite {
+    width: min(100% - 26px, 940px);
+    padding: 28px 0 42px 5px;
+  }
+
+  .fragekarte {
+    min-height: 390px;
+    padding: 22px 18px;
+  }
+
+  .navigation {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fortschritt {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  #zurueck {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  #neustart {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .fragenkopf {
+    display: block;
+  }
+
+  .infobutton--frage {
+    margin-top: 14px;
+  }
+
+  .antwortkarte {
+    grid-template-columns: 1fr;
+  }
+
+  .infobutton {
+    min-height: 44px;
+  }
+
+  .dialog-inhalt {
+    padding: 62px 24px 38px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+.navigation:has(#zurueck[hidden]) {
+	display: none;
+}
+
+
+.kicker {
+  font-family: var(--schrift-ueberschrift);
+  font-weight: 400;
+}
+
+.seitenkopf h1 {
+  font-family: var(--schrift-ueberschrift);
+  font-weight: 700;
+}
+
+.antwortbutton,
+.infobutton {
+  font-family: var(--schrift-ueberschrift);
+  font-weight: 400;
+}
+
+
+/* Zurück und Neu beginnen */
+.navigation #zurueck,
+.navigation #neustart {
+  font-family: var(--schrift-ueberschrift);
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+/* Zurück-Pfeil */
+.navigation #zurueck span {
+  color: var(--rot);
+  font-family: "IBM Plex Sans"
+  font-size: 1.6rem;
+  margin-right: 6px;
+}
+
+.einleitung {
+  max-width: none;
+  width: 100%;
+}
+
+.antwortkarte .infobutton {
+  display: none;
+}
+
+.antwortkarte {
+  grid-template-columns: 1fr;
+}
+
+.hinweisbox {
+  position: relative;
+  border-top: 1px solid var(--linie);
+  margin-top: 3rem;
+  padding-top: 14px;
+  margin-bottom: 1.5rem;
+}
+
+.hinweisbox::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1.5rem;
+  height: 5px;
+  background: var(--rot);
+  transform: translateY(-50%);
+  
+  .gif-link {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.gif-link img {
+  display: block;
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+}
+
+.gif-link--platzhalter {
+  cursor: default;
+}
