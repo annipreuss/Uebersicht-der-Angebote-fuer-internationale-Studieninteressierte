@@ -13,7 +13,7 @@ window.HZB_INHALTE = {
   start: "ausgangslage",
 
   meta: {
-    titel: "Interesse an einem Studium an der HKA?",
+    titel: "Lust auf ein Studium an der HKA?",
     kicker: "Hochschulzugang für Internationals",
     einleitung:
       "Du kommst aus dem Ausland und möchtest an der Hochschule Karlsruhe studieren? Großartig! Schauen wir mal, welches Angebot zu dir passt."
