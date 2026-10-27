@@ -607,13 +607,13 @@ button {
 .navigation #neustart {
   font-family: var(--schrift-ueberschrift);
   font-size: 1.3rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 /* Zurück-Pfeil */
 .navigation #zurueck span {
   color: var(--rot);
-  font-family: "IBM Plex Sans"
+  font-family: "IBM Plex Sans";
   font-size: 1.6rem;
   margin-right: 6px;
 }
@@ -648,6 +648,7 @@ button {
   height: 5px;
   background: var(--rot);
   transform: translateY(-50%);
+}
   
   .gif-link {
   display: inline-block;
@@ -663,4 +664,11 @@ button {
 
 .gif-link--platzhalter {
   cursor: default;
+}
+
+.fragenkopf h2,
+.ergebnis h2,
+.dialog-inhalt h2 {
+  font-family: var(--schrift-ueberschrift);
+  font-weight: 700;
 }
