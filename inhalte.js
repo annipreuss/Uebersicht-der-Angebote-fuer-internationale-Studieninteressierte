@@ -560,7 +560,7 @@ window.HZB_INHALTE = {
       bereich: "Kein passendes Angebot",
       titel: "Besuch eines Studienkolleg",
       beschreibung:
-        "Auf Grundlage deiner Angaben können wir dir an der Hochschule Karlsruhe aktuell leider kein passendes Angebot für deinen Weg ins Studium machen.\n\n Um in Deutschland studieren zu können, musst du zunächst ein Studienkolleg besuchen und die Feststellungsprüfung erfolgreich ablegen.\n\n Wir wünschen dir viel Erfolg auf deinem weiteren Weg und hoffen, dich bald an der Hochschule Karlsruhe\n willkommen heißen zu dürfen!",
+        "Auf Grundlage deiner Angaben können wir dir an der Hochschule Karlsruhe aktuell leider kein passendes Angebot für deinen Weg ins Studium machen.\n\n Um in Deutschland studieren zu können, musst du zunächst ein Studienkolleg besuchen und die Feststellungsprüfung erfolgreich ablegen.\n\n Wir wünschen dir viel Erfolg auf deinem weiteren Weg und hoffen, dich bald an der Hochschule Karlsruhe willkommen heißen zu dürfen!",
       farbe: "#d72305"
     }
   }
