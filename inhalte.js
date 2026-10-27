@@ -87,14 +87,14 @@ window.HZB_INHALTE = {
 	  },
       antworten: [
         {
-          text: "Direkte Hochschulzugangsberechtigung",
+          text: "Direkte Hochschulzugangs\u00ADberechtigung",
           weiter: "mmt-deutsch",
           erklaerung: {
             uebersicht: "direkt"
           }
         },
         {
-          text: "Indirekte Hochschulzugangsberechtigung",
+          text: "Indirekte Hochschulzugangs\u00ADberechtigung",
           weiter: "indirekt-zulassung",
           erklaerung: {
             uebersicht: "indirekt"
