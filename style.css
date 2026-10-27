@@ -2,6 +2,33 @@
    Hier lässt sich das Design anpassen.
    ================================================================ */
 
+/* IBM Plex Sans Regular */
+@font-face {
+	font-family: "IBM Plex Sans Regular";
+	src: url("./fonts/IBMPelxSans-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* IBM Plex Sans Light */
+@font-face {
+	font-family: "IBM Plex Sans Light";
+	src: url("./fonts/IBMPelxSans-Light.ttf") format("truetype");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* IBM Plex Sans Medium */
+@font-face {
+	font-family: "IBM Plex Sans Medium";
+	src: url("./fonts/IBMPelxSans-Medium.ttf") format("truetype");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
 /* GT Pressura Regular */
 @font-face {
   font-family: "GT Pressura";
@@ -669,4 +696,20 @@ button {
 .dialog-inhalt h2 {
   font-family: var(--schrift-ueberschrift);
   font-weight: 700;
+}
+
+/* IBM Plex Sans: vorhandenen Medium-Schnitt verwenden */
+.kicker,
+.bereich {
+  font-weight: 500;
+}
+
+.textbutton,
+.ergebnislink,
+.uebersicht-status,
+.region > p,
+.regionschip,
+.ablauf li,
+.hinweisbox a {
+  font-weight: 500;
 }
