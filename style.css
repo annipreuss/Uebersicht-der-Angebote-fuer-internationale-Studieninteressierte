@@ -713,3 +713,29 @@ button {
 .hinweisbox a {
   font-weight: 500;
 }
+
+/* Lange Wörter dürfen auch auf kleinen Bildschirmen umbrechen */
+.bereich,
+.fragenkopf h2,
+.antwortbutton {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+/* Verhindert, dass Inhalte ihre Container verbreitern */
+.fragenkopf > *,
+.antwortkarte,
+.antwortbutton {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.antworten {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* Antwortkarten ohne zusätzlichen Erklärungsbutton */
+.antwortkarte {
+  grid-template-columns: minmax(0, 1fr);
+}
