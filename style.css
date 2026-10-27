@@ -740,3 +740,20 @@ button {
 .antwortkarte {
   grid-template-columns: minmax(0, 1fr);
 }
+
+/* Navigation auf schmalen Bildschirmen */
+.navigation {
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.navigation > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+#zurueck,
+#neustart {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
