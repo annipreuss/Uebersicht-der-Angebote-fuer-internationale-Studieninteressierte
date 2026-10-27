@@ -481,7 +481,7 @@ window.HZB_INHALTE = {
       typ: "ergebnis",
       bereich: "Gute Nachrichten!",
       titel: "Die Bewerbung auf einen Studienplatz ist unter diesen Voraussetzungen ohne zusätzliche Schritte möglich.",
-      beschreibung: "Auf Grundlage deiner Angaben ist eine Bewerbung für einen Studienplatz an der Hochschule Karlsruhe\n uneingeschränkt möglich.\n Bitte beachte, dass für die Zulassung in deinem Wunschstudiengang weitere Zugangsvoraussetzungen\n gelten können.\n\n Informiere dich über die nächsten Schritte hier:",
+      beschreibung: "Auf Grundlage deiner Angaben ist eine Bewerbung für einen Studienplatz an der Hochschule Karlsruhe uneingeschränkt möglich.\n Bitte beachte, dass für die Zulassung in deinem Wunschstudiengang weitere Zugangsvoraussetzungen\n gelten können.\n\n Informiere dich über die nächsten Schritte hier:",
       farbe: "#d72305",
 	  link: "https://www.h-ka.de/bewerben-fuer-bachelor/bewerben",
 	  linkText: "Weiterführende Informationen zur Bewerbung"
