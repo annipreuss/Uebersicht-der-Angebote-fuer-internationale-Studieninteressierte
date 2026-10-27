@@ -720,7 +720,8 @@ button {
 .antwortbutton {
   white-space: normal;
   overflow-wrap: anywhere;
-  hyphens: auto;
+  -webkit-hyphens: manual;
+  hyphens: manual;
 }
 
 /* Verhindert, dass Inhalte ihre Container verbreitern */
