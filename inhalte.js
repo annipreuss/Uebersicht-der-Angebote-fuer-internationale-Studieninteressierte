@@ -109,31 +109,16 @@ window.HZB_INHALTE = {
       frage: "Wie gut sprichst du Deutsch?",
       antworten: [
         {
-          text: "Ich habe ein B1-Zertifikat oder niedriger.",
+          text: " Auf B1-Niveau oder niedriger.",
           weiter: "kein-studium",
-          erklaerung: {
-            bereich: "Deutschkenntnisse",
-            titel: "Sprachniveau B1",
-            text: "Die studieninteressierte Person hat Deutschkenntnisse auf Niveau B1."
-          }
         },
         {
-          text: "Ich habe ein B2-Zertifikat.",
+          text: "Auf B2-Niveau.",
           weiter: "direkt-b2-form",
-          erklaerung: {
-            bereich: "Deutschkenntnisse",
-            titel: "Sprachniveau B2",
-            text: "Die studieninteressierte Person hat Deutschkenntnisse auf Niveau B2."
-          }
         },
         {
-          text: "Ich habe ein C1-Zertifikat.",
+          text: "Auf C1-Niveau.",
           weiter: "direkt-b2-form",
-          erklaerung: {
-            bereich: "Deutschkenntnisse",
-            titel: "Sprachniveau C1",
-            text: "Die studieninteressierte Person hat Deutschkenntnisse auf Niveau C1."
-          }
         }
       ]
     },
