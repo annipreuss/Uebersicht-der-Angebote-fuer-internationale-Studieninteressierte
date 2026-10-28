@@ -210,7 +210,7 @@ window.HZB_INHALTE = {
 	  antworten: [
 	    {
 			text: "Ich brauche ein B2-Zertifikat.",
-			weiter: "hzp-hka"
+			weiter: "beschraenkt-c1-form"
 		},
 		{
 			text: "Ich brauche ein C1-Zertifikat.",
