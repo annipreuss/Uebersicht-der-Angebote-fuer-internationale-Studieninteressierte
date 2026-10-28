@@ -127,7 +127,7 @@ window.HZB_INHALTE = {
         },
         {
           text: "Ich habe ein B2-Zertifikat.",
-          weiter: "esi",
+          weiter: "direkt-b2-form",
           erklaerung: {
             bereich: "Deutschkenntnisse",
             titel: "Sprachniveau B2",
@@ -136,7 +136,7 @@ window.HZB_INHALTE = {
         },
         {
           text: "Ich habe ein C1-Zertifikat.",
-          weiter: "studium-moeglich",
+          weiter: "direkt-b2-form",
           erklaerung: {
             bereich: "Deutschkenntnisse",
             titel: "Sprachniveau C1",
@@ -440,23 +440,114 @@ window.HZB_INHALTE = {
         {
           text: "Ja, ich habe den TestAS erfolgreich abgelegt.",
           weiter: "hzp-hka",
-          erklaerung: {
-            bereich: "Teilnahmeform",
-            titel: "Online",
-            text: "Das Angebot wird ortsungebunden online durchgeführt."
-          }
         },
 		{
           text: "Nein, ich habe den TestAS noch nicht erfolgreich abgelegt.",
           weiter: "testas-hka",
-          erklaerung: {
-            bereich: "Teilnahmeform",
-            titel: "Vor Ort",
-            text: "Das Angebot wird in Präsenz an der HKA durchgeführt."
-          }
         },
       ]
     },
+
+	 "direkt-b2-form": {
+      typ: "frage",
+      bereich: "Erforderliche Deutschkenntnisse",
+      frage: "Welche Deutschkenntnisse brauchst du für dein Wunschstudium?",
+	  erklaerung: {
+	    bereich: "Sprachliche Studierfähigkeit",
+        titel: "Erforderliche Deutschkenntnisse",
+        text:
+          "Bei der Bewerbung musst du deine sprachliche Studierfähigkeit durch eine erfolgreich abgelegte Deutsche Sprachprüfung für den Hochschulzugang (DSH) nachweisen. Je nach deinem Studienwunsch brauchst du eine DSH-1, DSH-2 oder DSH-3. Weiterführende Informationen zur DSH an der Hochschule Karlsruhe und den studiengangspezifischen Sprachanforderungen findest du hier:<br><br>",
+		  link: "https://www.h-ka.de/dsh",
+		  linkText: "Deutsche Sprachprüfung für den Hochschulzugang (DSH)"
+      },
+      antworten: [
+        {
+          text: "Ich brauche eine DSH-1.",
+          weiter: "dsh-1-form",
+        },
+		{
+          text: "Ich brauche eine DSH-2.",
+          weiter: "dsh-2-form",
+        },
+		  {
+          text: "Ich brauche eine DSH-3.",
+          weiter: "dsh-3-form",
+        },
+      ]
+    },
+	  
+	"dsh-1-form": {
+      typ: "frage",
+      bereich: "Deutsche Sprachprüfung für den Hochschulzugang (DSH)",
+      frage: "Hast du bereits das nötige DSH-Zeugnis oder ein passendes Äquivalent?",
+		erklaerung: {
+	    bereich: "DSH und Äquivalente",
+        titel: "Welche Äquivalente zur DSH werden anerkannt?",
+        text:
+          "Die Liste der anerkannten Äquivalente zu den unterschiedlichen DSH-Niveaustufen findest du in der Zulassungs- und Immatrikulationsordnung der Hochschule Karlsruhe. Falls du dir unsicher bist, ob dein Zertifikat anerkannt wird, kannst du uns eine E-Mail an <a href='mailto:beratungifs@h-ka.de'>beratungifs@h-ka.de</a> schreiben. Wir beraten dich gern persönlich.<br><br>",
+		  link: "https://www.h-ka.de/studieren/studium-organisieren/studienordnungen-satzungen/zulassungssatzungen",
+		  linkText: "Zulassungssatzungen"
+      },
+      antworten: [
+        {
+          text: "Ja",
+          weiter: "esi",
+        },
+		{
+          text: "Nein",
+          weiter: "dsh-hka",
+        },
+      ]
+    },
+
+	"dsh-2-form": {
+      typ: "frage",
+      bereich: "Deutsche Sprachprüfung für den Hochschulzugang (DSH)",
+      frage: "Hast du bereits das nötige DSH-Zeugnis oder ein passendes Äquivalent?",
+	  erklaerung: {
+	    bereich: "DSH und Äquivalente",
+        titel: "Welche Äquivalente zur DSH werden anerkannt?",
+        text:
+          "Die Liste der anerkannten Äquivalente zu den unterschiedlichen DSH-Niveaustufen findest du in der Zulassungs- und Immatrikulationsordnung der Hochschule Karlsruhe. Falls du dir unsicher bist, ob dein Zertifikat anerkannt wird, kannst du uns eine E-Mail an <a href='mailto:beratungifs@h-ka.de'>beratungifs@h-ka.de</a> schreiben. Wir beraten dich gern persönlich.<br><br>",
+		  link: "https://www.h-ka.de/studieren/studium-organisieren/studienordnungen-satzungen/zulassungssatzungen",
+		  linkText: "Zulassungssatzungen"
+      },
+      antworten: [
+        {
+          text: "Ja",
+          weiter: "studium-moeglich",
+        },
+		{
+          text: "Nein",
+          weiter: "dsh-hka",
+        },
+      ]
+    },
+
+	"dsh-3-form": {
+      typ: "frage",
+      bereich: "Deutsche Sprachprüfung für den Hochschulzugang (DSH)",
+      frage: "Hast du bereits das nötige DSH-Zeugnis oder ein passendes Äquivalent?",
+	  erklaerung: {
+	    bereich: "DSH und Äquivalente",
+        titel: "Welche Äquivalente zur DSH werden anerkannt?",
+        text:
+          "Die Liste der anerkannten Äquivalente zu den unterschiedlichen DSH-Niveaustufen findest du in der Zulassungs- und Immatrikulationsordnung der Hochschule Karlsruhe. Falls du dir unsicher bist, ob dein Zertifikat anerkannt wird, kannst du uns eine E-Mail an <a href='mailto:beratungifs@h-ka.de'>beratungifs@h-ka.de</a> schreiben. Wir beraten dich gern persönlich.<br><br>",
+		  link: "https://www.h-ka.de/studieren/studium-organisieren/studienordnungen-satzungen/zulassungssatzungen",
+		  linkText: "Zulassungssatzungen"
+      },
+      antworten: [
+        {
+          text: "Ja",
+          weiter: "studium-moeglich",
+        },
+		{
+          text: "Nein",
+          weiter: "dsh-hka",
+        },
+      ]
+    },
+
     /* ============================ ERGEBNISSE ============================ */
 
     "kein-studium": {
@@ -465,6 +556,16 @@ window.HZB_INHALTE = {
       titel: "Gut vorbereitet ins Studium starten",
       beschreibung: "Für ein erfolgreiches Studium an der Hochschule Karlsruhe sind gute Deutschkenntnisse wichtig. Auf Grundlage deiner Angaben empfehlen wir dir, zunächst weiter Deutsch zu lernen und dich so auf dein Wunschstudium in Deutschland vorzubereiten.\n\n Du möchtest trotzdem schon jetzt mit dem Studium beginnen oder wissen, welche alternativen Möglichkeiten es für dich gibt? Schreib' uns doch eine E-Mail an <a href='mailto:beratungifs@h-ka.de'>beratungifs@h-ka.de</a>! Wir beraten dich gern persönlich und prüfen gemeinsam mit dir, welcher Weg für dich infrage kommt.\n\n Wir wünschen dir viel Erfolg auf deinem weiteren Bildungsweg!",
       farbe: "#d72305"
+    },
+
+	 "dsh-hka": {
+      typ: "ergebnis",
+      bereich: "Empfehlung",
+      titel: "Die DSH an der Hochschule Karlsruhe",
+      beschreibung: "Auf Grundlage deiner Angaben fehlt dir aktuell das nötige DSH-Zeugnis bzw. ein anerkanntes Äquivalent, um die nötigen Sprachkenntnisse für dein Wunschstudium nachzuweisen.\n\n Wusstest du, dass du die DSH bei uns an der Hochschule Karlsruhe ablegen kannst? Schreib' uns doch eine E-Mail an <a href='mailto:beratungifs@h-ka.de'>beratungifs@h-ka.de</a>! Wir beraten dich gern persönlich und prüfen gemeinsam mit dir, wie du schnellstmöglich in dein Studium an der Hochschule Karlsruhe starten kannst!",
+      farbe: "#d72305"
+	  link: "https://www.h-ka.de/dsh",
+	  linkText: "https://www.h-ka.de/dsh"
     },
 
     "esi": {
