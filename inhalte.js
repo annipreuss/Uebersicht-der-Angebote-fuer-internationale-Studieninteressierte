@@ -546,7 +546,7 @@ window.HZB_INHALTE = {
       typ: "ergebnis",
       bereich: "Empfehlung",
       titel: "Gut vorbereitet ins Studium starten",
-      beschreibung: "Für ein erfolgreiches Studium an der Hochschule Karlsruhe sind gute Deutschkenntnisse wichtig. Auf Grundlage deiner Angaben empfehlen wir dir, zunächst weiter Deutsch zu lernen und dich so auf dein Wunschstudium in Deutschland vorzubereiten.\n\n Du möchtest trotzdem schon jetzt mit dem Studium beginnen oder wissen, welche alternativen Möglichkeiten es für dich gibt? Schreib' uns doch eine E-Mail an <a href='mailto:beratungifs@h-ka.de'>beratungifs@h-ka.de</a>! Wir beraten dich gern persönlich und prüfen gemeinsam mit dir, welcher Weg für dich infrage kommt.\n\n Wir wünschen dir viel Erfolg auf deinem weiteren Bildungsweg!",
+      beschreibung: "Für ein erfolgreiches Studium an der Hochschule Karlsruhe sind Deutschkenntnisse auf mindestens B2-Niveau wichtig. Auf Grundlage deiner Angaben empfehlen wir dir, zunächst weiter Deutsch zu lernen und dich so auf dein Wunschstudium in Deutschland vorzubereiten.\n\n Du möchtest trotzdem schon jetzt mit dem Studium beginnen oder wissen, welche alternativen Möglichkeiten es für dich gibt? Schreib' uns doch eine E-Mail an <a href='mailto:beratungifs@h-ka.de'>beratungifs@h-ka.de</a>! Wir beraten dich gern persönlich und prüfen gemeinsam mit dir, welcher Weg für dich infrage kommt.\n\n Wir wünschen dir viel Erfolg auf deinem weiteren Bildungsweg!",
       farbe: "#d72305"
     },
 
