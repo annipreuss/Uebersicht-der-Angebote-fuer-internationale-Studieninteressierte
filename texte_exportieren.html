@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Übersetzungstabelle exportieren – HZB-Wegweiser</title>
+  <style>
+    :root { font-family: system-ui, sans-serif; color: #171716; background: #f4f4f2; }
+    body { max-width: 900px; padding: 24px; margin: 0 auto; }
+    .panel { background: white; padding: 24px; border: 1px solid #c9c9c4; border-radius: 12px; }
+    h1 { margin-top: 0; font-size: 1.65rem; }
+    button { background: #d72305; color: white; border: 0; border-radius: 6px; padding: 12px 18px; font: inherit; cursor: pointer; }
+    button:disabled { cursor: not-allowed; opacity: .6; }
+    .hinweis { color: #5c5c57; }
+    table { width: 100%; border-collapse: collapse; margin-top: 18px; }
+    th,td { padding: 9px; border-bottom: 1px solid #ddd; text-align: left; vertical-align: top; }
+    td:first-child { font-family: monospace; font-size: .85rem; overflow-wrap: anywhere; }
+    td:nth-child(2) { overflow-wrap: anywhere; }
+    .scroll { overflow-x: auto; }
+    #meldung { min-height: 1.6rem; margin: 1rem 0; }
+  </style>
+</head>
+<body>
+  <main class="panel">
+    <h1>Übersetzungstabelle exportieren</h1>
+    <p>Diese Hilfsdatei liest deine <code>inhalte.js</code> und erstellt daraus eine CSV-Datei für Excel. Deine Website-Dateien werden <strong>nicht geändert</strong>.</p>
+    <p><strong>Voraussetzung:</strong> Diese HTML-Datei muss im selben Ordner liegen wie deine aktuelle <code>inhalte.js</code>.</p>
+    <button id="export" type="button">CSV-Datei herunterladen</button>
+    <p id="meldung" role="status"></p>
+    <p class="hinweis">Es werden die von der Startfrage aus erreichbaren Schritte, relevante Übersichten und feste sichtbare Bedien- bzw. Screenreadertexte erfasst. Links, Kennungen, Farben und Programmcode werden nicht exportiert. Formatierung wie <code>&lt;em&gt;</code> und <code>&lt;br&gt;</code> bleibt in den Textfeldern stehen und darf bei der Übersetzung nicht beschädigt werden.</p>
+    <h2>Vorschau (erste 10 Einträge)</h2>
+    <div class="scroll"><table><thead><tr><th>Kennung</th><th>Deutsch</th><th>Englisch</th></tr></thead><tbody id="vorschau"></tbody></table></div>
+  </main>
+
+  <!-- Die vorhandene Inhaltsdatei wird eingelesen. script.js ist NICHT nötig. -->
+  <script src="inhalte.js"></script>
+  <script>
+    "use strict";
+
+    // Schritt 1: Wir lesen die Daten, die in inhalte.js bereitgestellt werden.
+    const daten = window.HZB_INHALTE;
+    const meldung = document.getElementById("meldung");
+    const exportButton = document.getElementById("export");
+    const vorschau = document.getElementById("vorschau");
+
+    if (!daten || !daten.schritte || !daten.schritte[daten.start]) {
+      meldung.textContent = "Fehler: inhalte.js wurde nicht geladen. Liegen beide Dateien im selben Ordner?";
+      exportButton.disabled = true;
+    } else {
+      // Schritt 2: Die drei Spalten der späteren Tabelle.
+      const zeilen = [];
+
+      // Fügt einen sichtbaren Text hinzu. Leere Werte werden übersprungen.
+      function aufnehmen(kennung, deutsch) {
+        if (typeof deutsch === "string" && deutsch.trim() !== "") {
+          zeilen.push({ kennung, deutsch, englisch: "" });
+        }
+      }
+
+      // Nur Werte dieser Eigenschaften sind potenziell angezeigte Texte.
+      // Technische Eigenschaften wie "weiter", "typ", "link" und "farbe" fehlen absichtlich.
+      const textFelder = new Set([
+        "titel", "kicker", "einleitung", "frage", "bereich", "text",
+        "linkText", "status", "zusammenfassung", "hinweis", "quelleText",
+        "beschreibung", "zusatz", "regionText"
+      ]);
+      const textListen = new Set(["regionen", "wege", "schritte"]);
+
+      // Rekursiv bedeutet: Die Funktion kann auch Unterobjekte durchlaufen.
+      function sammleTexte(objekt, pfad, startSchritt = false) {
+        if (!objekt || typeof objekt !== "object") return;
+
+        for (const [feld, wert] of Object.entries(objekt)) {
+          const kennung = pfad + "." + feld;
+
+          if (Array.isArray(wert)) {
+            // "antworten" enthält Objekte; dort stehen die sichtbaren Buttontexte.
+            if (feld === "antworten") {
+              wert.forEach((antwort, index) => {
+                sammleTexte(antwort, kennung + "." + index);
+              });
+            }
+            // Manche erklärenden Listen werden als einzelne Textzeilen angezeigt.
+            else if (textListen.has(feld)) {
+              wert.forEach((eintrag, index) => {
+                if (typeof eintrag === "string") aufnehmen(kennung + "." + index, eintrag);
+              });
+            }
+          } else if (wert && typeof wert === "object") {
+            sammleTexte(wert, kennung);
+          } else if (typeof wert === "string" && textFelder.has(feld)) {
+            // Das Wort "Ausgangspunkt" ist nur auf dem Startschritt als Bereich
+            // hinterlegt und wird dort durch script.js ausdrücklich ausgeblendet.
+            if (!(startSchritt && feld === "bereich" && wert === "Ausgangspunkt")) {
+              aufnehmen(kennung, wert);
+            }
+          }
+        }
+      }
+
+      // Schritt 3: Allgemeine Überschriften und die tatsächlich genutzte HZB-Übersicht.
+      sammleTexte(daten.meta, "meta");
+
+      // Schritt 4: Erreichbare Schritte mithilfe der "weiter"-Verknüpfungen sammeln.
+      const besucht = new Set();
+      const offen = [daten.start];
+      const genutzteUebersichten = new Set();
+
+      while (offen.length > 0) {
+        const schrittId = offen.shift();
+        if (besucht.has(schrittId)) continue;
+        besucht.add(schrittId);
+
+        const schritt = daten.schritte[schrittId];
+        if (!schritt) continue;
+
+        // Merken, welche gesonderten HZB-Übersichten gebraucht werden.
+        const erklaerungen = [schritt.erklaerung, ...(schritt.antworten || []).map(a => a.erklaerung)];
+        erklaerungen.forEach(e => {
+          if (e && e.uebersicht) {
+            if (e.uebersicht === "beide") {
+              genutzteUebersichten.add("direkt");
+              genutzteUebersichten.add("indirekt");
+            } else {
+              genutzteUebersichten.add(e.uebersicht);
+            }
+          }
+        });
+
+        sammleTexte(schritt, "schritte." + schrittId, schrittId === daten.start);
+        (schritt.antworten || []).forEach(antwort => {
+          if (antwort.weiter && !besucht.has(antwort.weiter)) offen.push(antwort.weiter);
+        });
+      }
+
+      if (genutzteUebersichten.size > 0 && daten.uebersichten) {
+        for (const feld of ["titel", "einleitung", "hinweis", "quelleText"]) {
+          aufnehmen("uebersichten." + feld, daten.uebersichten[feld]);
+        }
+        for (const name of genutzteUebersichten) {
+          sammleTexte(daten.uebersichten[name], "uebersichten." + name);
+        }
+      }
+
+      // Schritt 5: Feste, sichtbare Texte außerhalb von inhalte.js.
+      // Diese sind bewusst einzeln erfasst, nicht aus technischem Quelltext geraten.
+      const festeTexte = [
+        ["index.html.zurueck", "Zurück"],
+        ["index.html.neustart", "Zurück zum Anfang"],
+        ["index.html.frageninfo", "Was bedeutet das?"],
+        ["index.html.dialog-schliessen.aria-label", "Erklärung schließen"],
+        ["script.js.antwortinfo.button", "Erklärung"],
+        ["script.js.antwortinfo.aria-vorlage", "Erklärung zu „{antwort}“ anzeigen"],
+        ["script.js.dialog.standardtitel", "Weitere Informationen"],
+        ["script.js.dialog.standardbereich", "Erklärung"],
+        ["script.js.hzb.gemeinsamerTitel", "Direkte und indirekte HZB"]
+      ];
+      festeTexte.forEach(([kennung, deutsch]) => aufnehmen(kennung, deutsch));
+
+      // Schritt 6: CSV erzeugen. Semikolon ist in deutschen Excel-Einstellungen praktisch.
+      // Anführungszeichen verhindern, dass Satzzeichen und Zeilenumbrüche Zellen zerstören.
+      function csvFeld(text) {
+        return '"' + String(text).replace(/"/g, '""') + '"';
+      }
+      function erstelleCsv() {
+        const datenZeilen = [["Kennung", "Deutsch", "Englisch"]];
+        zeilen.forEach(e => datenZeilen.push([e.kennung, e.deutsch, e.englisch]));
+        return "\uFEFF" + datenZeilen.map(z => z.map(csvFeld).join(";")).join("\r\n");
+      }
+
+      // Schritt 7: Beim Klick wird die Datei heruntergeladen – ohne GitHub-Upload.
+      exportButton.addEventListener("click", () => {
+        const blob = new Blob([erstelleCsv()], { type: "text/csv;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "uebersetzungstabelle_hzb.csv";
+        link.click();
+        URL.revokeObjectURL(url);
+      });
+
+      // Die Vorschau zeigt die ersten 10 Textstellen, damit man die Auswahl prüfen kann.
+      zeilen.slice(0, 10).forEach(e => {
+        const tr = document.createElement("tr");
+        [e.kennung, e.deutsch, e.englisch].forEach(wert => {
+          const td = document.createElement("td");
+          td.textContent = wert;
+          tr.append(td);
+        });
+        vorschau.append(tr);
+      });
+      meldung.textContent = zeilen.length + " Textstellen aus " + besucht.size + " erreichbaren Schritten vorbereitet.";
+    }
+  </script>
+</body>
+</html>
