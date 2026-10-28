@@ -107,14 +107,6 @@ window.HZB_INHALTE = {
       typ: "frage",
       bereich: "Deutschkenntnisse",
       frage: "Wie gut sprichst du Deutsch?",
-      erklaerung: {
-        bereich: "Deutschkenntnisse",
-        titel: "Deutschkenntnisse",
-        text:
-          "Je nach deinem Studienwunsch musst du bei der Bewerbung Deutschkenntnisse auf B2- oder C1-Niveau nachweisen. Weiterführende Informationen zu den spezifischen Sprachanforderungen der einzelnen Studiengänge findest du hier:<br><br>",
-		  link: "bilder/platzhalter.gif",
-		  linkText: "Weiterführende Informationen"
-      },
       antworten: [
         {
           text: "Ich habe ein B1-Zertifikat oder niedriger.",
@@ -563,7 +555,7 @@ window.HZB_INHALTE = {
       bereich: "Empfehlung",
       titel: "Die DSH an der Hochschule Karlsruhe",
       beschreibung: "Auf Grundlage deiner Angaben fehlt dir aktuell das nötige DSH-Zeugnis bzw. ein anerkanntes Äquivalent, um die nötigen Sprachkenntnisse für dein Wunschstudium nachzuweisen.\n\n Wusstest du, dass du die DSH bei uns an der Hochschule Karlsruhe ablegen kannst? Schreib' uns doch eine E-Mail an <a href='mailto:beratungifs@h-ka.de'>beratungifs@h-ka.de</a>! Wir beraten dich gern persönlich und prüfen gemeinsam mit dir, wie du schnellstmöglich in dein Studium an der Hochschule Karlsruhe starten kannst!",
-      farbe: "#d72305"
+      farbe: "#d72305",
 	  link: "https://www.h-ka.de/dsh",
 	  linkText: "https://www.h-ka.de/dsh"
     },
