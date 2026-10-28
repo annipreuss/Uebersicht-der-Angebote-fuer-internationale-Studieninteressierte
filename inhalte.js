@@ -139,26 +139,10 @@ window.HZB_INHALTE = {
         {
           text: "Zulassungsfreier Studiengang",
           weiter: "frei-deutsch",
-          erklaerung: {
-            bereich: "Studiengang",
-            titel: "Zulassungsfreie Studiengänge",
-            text:
-              "Zulassungsfreie Studiengänge an der HKA:\n\n1. Automotive / Aerospace Engineering (MMT)\n2. Baumanagement und Baubetrieb (AB)\n3. Data Science (IWI)\n4. Electrical Engineering and Information Technology (EIT)\n5. Elektrotechnik mit den Vertiefungsrichtungen Automatisierungstechnik, Energietechnik & Erneuerbare Energien, Informationstechnik (EIT)\n6. Green Technology Management (EIT & MMT)\n7. Künstliche Intelligenz in den Ingenieurwissenschaften (EIT & MMT)\n8. Maschinenbau (MMT)\n9. Mechatronik (MMT)\n10. Quantencomputing (EIT)\n11. Umweltingenieurwesen (Bau) (AB)\n12. Verkehrssystemmanagement (IMM)\n\nGemäß § 8 HZaBVO kann ein Probestudium nur für zulassungsfreie Studiengänge als hochschulindividuelles Zugangsverfahren dienen.",
-            link: "https://www.h-ka.de/bewerben-fuer-bachelor/bewerben#c60958",
-            linkText: "Übersicht: Zulassungsfreie Studiengänge an der HKA"
-          }
         },
         {
           text: "Zulassungsbeschränkter Studiengang",
           weiter: "beschraenkt-deutsch",
-          erklaerung: {
-            bereich: "Studiengang",
-            titel: "Zulassungsbeschränkte Studiengänge",
-            text:
-              "Zulassungsbeschränkte Studiengänge an der HKA:\n\n1. Bauingenieurwesen (AB)\n2. Informatik (IWI)\n3. Internationales IT Business (IWI)\n4. Betriebswirtschaftslehre (W)\n5. Medieninformatik (IWI)\n6. Wirtschaftsinformatik (IWI)\n7. Wirtschaftsingenieurwesen (W)",
-            link: "https://www.h-ka.de/bewerben-fuer-bachelor/bewerben#c60955",
-            linkText: "Übersicht: Zulassungsbeschränkte Studiengänge an der HKA"
-          }
         }
       ]
     },
