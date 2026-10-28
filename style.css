@@ -759,23 +759,20 @@ button {
 }
 
 /* Infokasten an kleine Bildschirme anpassen */
-dialog {
+.dialog {
   box-sizing: border-box;
-  width: min(900px, calc(100% - 24px));
-  max-width: calc(100% - 24px);
+  position: fixed;
+  inset: 0;
+  margin: auto;
 
+  width: min(720px, calc(100vw - 24px));
+  max-width: calc(100vw - 24px);
+
+  height: auto;
   max-height: 90vh;
   max-height: 90dvh;
+
+  padding: 0;
   overflow-y: auto;
-}
-
-.dialog-inhalt {
-  min-width: 0;
-  overflow-wrap: anywhere;
-}
-
-@media (max-width: 600px) {
-  .dialog-inhalt {
-    padding: 60px 16px 24px;
-  }
+  overscroll-behavior: contain;
 }
