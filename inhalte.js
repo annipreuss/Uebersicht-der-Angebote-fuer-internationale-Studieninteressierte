@@ -64,7 +64,7 @@ window.HZB_INHALTE = {
         bereich: "",
         titel: "Was bedeutet das?",
         text:
-          "Damit wir einschätzen können, ob wir ein passendes Angebot für dich haben, müssen wir wissen, ob du in deinem Heimatland studieren darfst.\n Reicht das Schulzeugnis, was du hast, um in deinem Heimatland an einer Universität oder Hochschule zu studieren?"
+          "Damit wir einschätzen können, ob wir ein passendes Angebot für dich haben, müssen wir wissen, ob du in deinem Heimatland studieren darfst.\n Reicht das Schulzeugnis, welches du hast, um in deinem Heimatland an einer Universität oder Hochschule zu studieren?"
       },
       antworten: [
         {
@@ -463,7 +463,7 @@ window.HZB_INHALTE = {
       typ: "ergebnis",
       bereich: "Schade!",
       titel: "Leider ist unter diesen Voraussetzungen kein Studium möglich.",
-      beschreibung: "Aktuell können wir dir auf Grundlage deiner Angaben keinen passenden Zugangsweg zu einem Studium an der Hochschule Karlsruhe anzeigen.\n\n Wir empfehlen dir, dich persönlich beraten zu lassen. So können wir gemeinsam herausfinden, welche nächsten Schritte für dich infrage kommen.\n\n Wir wünschen dir viel Erfolg auf deinem weiteren Bildungsweg!",
+      beschreibung: "Aktuell können wir dir auf Grundlage deiner Angaben keinen passenden Zugangsweg zu einem Studium an der Hochschule Karlsruhe anzeigen.\n\n Wir empfehlen dir, dich persönlich beraten zu lassen. Wenn du möchtest, kannst du uns eine E-Mail an <a href='mailto:beratungifs@h-ka.de'>beratungifs@h-ka.de</a> senden, und wir können gemeinsam herausfinden, welche nächsten Schritte für dich infrage kommen.\n\n Wir wünschen dir viel Erfolg auf deinem weiteren Bildungsweg!",
       farbe: "#d72305"
     },
 
