@@ -123,43 +123,6 @@ window.HZB_INHALTE = {
       ]
     },
 
-    "sonstige-deutsch": {
-      typ: "frage",
-      bereich: "Deutschkenntnisse",
-      frage:
-        "Werden die nach der Zulassungs- und Immatrikulationsordnung erforderlichen Deutschkenntnisse nachgewiesen?",
-      erklaerung: {
-        bereich: "Deutschkenntnisse",
-        titel: "Deutschkenntnisse gemäß ZIO",
-        text: HZB_ZIO_ERKLAERUNG,
-        link:
-          "https://www.h-ka.de/fileadmin/Hochschule_Karlsruhe_HKA/Satzungen_Ordnungen/HKA_ZH_Zulassungs-Immatrikulations-O_V4_2022-07-22.pdf",
-        linkText: "Zulassungs- und Immatrikulationsordnung der HKA"
-      },
-      antworten: [
-        {
-          text: "Nein",
-          weiter: "kein-studium",
-          erklaerung: {
-            bereich: "Deutschkenntnisse",
-            titel: "Kein Nachweis gemäß ZIO",
-            text:
-              "Die studieninteressierte Person kann die erforderlichen Deutschkenntnisse gemäß § 3 Abs. 4 der Zulassungs- und Immatrikulationsordnung nicht nachweisen."
-          }
-        },
-        {
-          text: "Ja",
-          weiter: "studium-moeglich",
-          erklaerung: {
-            bereich: "Deutschkenntnisse",
-            titel: "Nachweis gemäß ZIO",
-            text:
-              "Die studieninteressierte Person kann die erforderlichen Deutschkenntnisse gemäß § 3 Abs. 4 der Zulassungs- und Immatrikulationsordnung nachweisen."
-          }
-        }
-      ]
-    },
-
     "indirekt-zulassung": {
       typ: "frage",
       bereich: "Studiengang",
@@ -214,41 +177,20 @@ window.HZB_INHALTE = {
       },
       antworten: [
         {
-          text: "Ich habe ein A2-Zertifikat.",
+          text: "Auf A2-Niveau.",
           weiter: "kein-studium",
-          erklaerung: {
-            bereich: "Deutschkenntnisse",
-            titel: "Sprachniveau A2",
-            text: "Die studieninteressierte Person hat Deutschkenntnisse auf Niveau A2."
-          }
         },
         {
-          text: "Ich habe ein B1-Zertifikat.",
+          text: "Auf B1-Niveau.",
           weiter: "frei-b1-form",
-          erklaerung: {
-            bereich: "Deutschkenntnisse",
-            titel: "Sprachniveau B1",
-            text: "Die studieninteressierte Person hat Deutschkenntnisse auf Niveau B1."
-          }
         },
         {
-          text: "Ich habe ein B2-Zertifikat.",
+          text: "Auf B2-Niveau.",
           weiter: "frei-b2-form",
-          erklaerung: {
-            bereich: "Deutschkenntnisse",
-            titel: "Sprachniveau B1",
-            text:
-              "Die studieninteressierte Person hat Deutschkenntnisse auf Niveau B1. Anschließend wird zwischen einer Teilnahme vor Ort und einer Online-Teilnahme unterschieden."
-          }
         },
         {
-          text: "Ich habe ein C1-Zertifikat.",
+          text: "Auf C1-Niveau.",
           weiter: "hzp-hka",
-          erklaerung: {
-            bereich: "Deutschkenntnisse",
-            titel: "Sprachniveau B2",
-            text: "Die studieninteressierte Person hat Deutschkenntnisse auf Niveau B2."
-          }
         }
       ]
     },
@@ -261,20 +203,10 @@ window.HZB_INHALTE = {
         {
           text: "An der Hochschule Karlsruhe",
           weiter: "dint-regulaer",
-          erklaerung: {
-            bereich: "Teilnahmeform",
-            titel: "Vor Ort",
-            text: "Das Angebot wird in Präsenz an der HKA durchgeführt."
-          }
         },
         {
           text: "Online",
           weiter: "vorsprung-ik",
-          erklaerung: {
-            bereich: "Teilnahmeform",
-            titel: "Online",
-            text: "Das Angebot wird ortsungebunden online durchgeführt."
-          }
         }
       ]
     },
@@ -317,42 +249,20 @@ window.HZB_INHALTE = {
       },
       antworten: [
         {
-          text: "Ich habe ein A2-Zertifikat.",
+          text: "Auf A2-Niveau.",
           weiter: "kein-studium",
-          erklaerung: {
-            bereich: "Deutschkenntnisse",
-            titel: "Keine Deutschkenntnisse",
-            text: "Die studieninteressierte Person hat Deutschkenntnisse auf Niveau A2."
-          }
         },
         {
-          text: "Ich habe ein B1-Zertifikat.",
+          text: "Auf B1-Niveau.",
           weiter: "beschraenkt-b1-form",
-          erklaerung: {
-            bereich: "Deutschkenntnisse",
-            titel: "Sprachniveau B1",
-            text: "Die studieninteressierte Person hat Deutschkenntnisse auf Niveau B1."
-          }
         },
         {
-          text: "Ich habe ein B2-Zertifikat.",
+          text: "Auf B2-Niveau.",
           weiter: "frei-b2-form",
-          erklaerung: {
-            bereich: "Deutschkenntnisse",
-            titel: "Sprachniveau B2",
-            text:
-              "Die studieninteressierte Person hat Deutschkenntnisse auf Niveau B2."
-          }
         },
         {
-          text: "Ich habe ein C1-Zertifikat.",
+          text: "Auf C1-Niveau.",
           weiter: "beschraenkt-c1-form",
-          erklaerung: {
-            bereich: "Deutschkenntnisse",
-            titel: "Sprachniveau C1",
-            text:
-              "Die studieninteressierte Person hat Deutschkenntnisse auf Niveau C1."
-          }
         }
       ]
     },
@@ -365,20 +275,10 @@ window.HZB_INHALTE = {
         {
           text: "In Deutschland",
           weiter: "studienkolleg",
-          erklaerung: {
-            bereich: "Teilnahmeform",
-            titel: "Vor Ort",
-            text: "Das Angebot wird in Präsenz durchgeführt."
-          }
         },
         {
           text: "Online",
           weiter: "vorsprung-ik",
-          erklaerung: {
-            bereich: "Teilnahmeform",
-            titel: "Online",
-            text: "Das Angebot wird ortsungebunden online durchgeführt."
-          }
         }
       ]
     },
@@ -391,20 +291,10 @@ window.HZB_INHALTE = {
         {
           text: "In Deutschland",
           weiter: "studienkolleg",
-          erklaerung: {
-            bereich: "Teilnahmeform",
-            titel: "Vor Ort",
-            text: "Das Angebot wird in Präsenz durchgeführt."
-          }
         },
         {
           text: "Online",
           weiter: "vorsprung",
-          erklaerung: {
-            bereich: "Teilnahmeform",
-            titel: "Online",
-            text: "Das Angebot wird ortsungebunden online durchgeführt."
-          }
         }
       ]
     },
@@ -413,6 +303,14 @@ window.HZB_INHALTE = {
       typ: "frage",
       bereich: "Test für Ausländische Studierende",
       frage: "Hast du bereits den TestAS abgelegt?",
+		erklaerung: {
+			bereich: "Test für Ausländische Studierende",
+			titel: "Was ist der Test für Ausländische Studierende (TestAS)?",
+			text:
+				"Der TestAS ist ein standardisierter Studieneignungstest für internationale Studieninteressierte, die in Deutschland studieren möchten. Er überprüft allgemeine und fachbezogene Fähigkeiten, die für ein erfolgreiches Studium wichtig sind./n/n Der Test kann auf Deutsch oder Englisch sowie digital oder papierbasiert abgelegt werden.",
+			link: "https://www.testas.de/de/teilnehmende/mit-dem-testas-an-eine-deutsche-hochschule",
+			linkText: "Mit dem TestAS an eine deutsche Hochschule"
+	  },
       antworten: [
         {
           text: "Ja, ich habe den TestAS erfolgreich abgelegt.",
@@ -554,7 +452,8 @@ window.HZB_INHALTE = {
 	  farbe: "#d72305",
 	  link: "bilder/platzhalter.gif",
 	  linkText: "Weiterführende Informationen"
-    },      	
+    },
+	  
     "studium-moeglich": {
       typ: "ergebnis",
       bereich: "Gute Nachrichten!",
@@ -563,17 +462,6 @@ window.HZB_INHALTE = {
       farbe: "#d72305",
 	  link: "https://www.h-ka.de/bewerben-fuer-bachelor/bewerben",
 	  linkText: "Weiterführende Informationen zur Bewerbung"
-    },
-
-    "dint-frueh": {
-      typ: "ergebnis",
-      bereich: "Programm",
-      titel: "Deutsch intensiv",
-      beschreibung:
-        "Deutsch intensiv (DINT) ist ein Probestudium gemäß § 8 HZaBVO.\n\nDie Studieninteressierten kommen bereits mit Sprachkenntnissen auf A2-Niveau an die Hochschule Karlsruhe. Im Rahmen der regulären IFS-Intensivkurse werden sie zu Semesterbeginn auf das Niveau B1.1 gebracht. Mit Beginn der Vorlesungszeit startet das reguläre DINT-Programm.",
-      link: "https://www.h-ka.de/deutsch-intensiv",
-      linkText: "Deutsch intensiv",
-      farbe: "#d72305"
     },
 
     "dint-regulaer": {
@@ -616,7 +504,7 @@ window.HZB_INHALTE = {
       bereich: "Passendes Angebot",
       titel: "Hochschulindividuelle Zugangsprüfung",
       beschreibung:
-        "Du möchtest an der Hochschule Karlsruhe studieren und erfüllst die sprachlichen Zugangsvoraussetzungen, aber dein ausländischer Schulabschluss berechtigt dich nicht zum direkten Hochschulzugang in Deutschland?\n Dann könnte unsere hochschulindividuelle Zugangsprüfung (HZP) genau das Richtige für dich sein!\n\n Mit der HZP bietet dir die Hochschule Karlsruhe eine Alternative zum Studienkolleg und zur Feststellungsprüfung. Dabei kannst du deine Eignung für dein Wunschstudium durch den Studieneignungstest TestAS und eine mündliche Prüfung unter Beweis stellen. Wenn du die HZP erfolgreich bestehst, erhältst du eine Studienberechtigung für deinen Wunschstudiengang an der Hochschule Karlsruhe. So kannst du deinen Weg ins Studium auch ohne den Besuch eines Studienkollegs beginnen.\n\n Weiterführende Informationen zur HZP an der Hochschule Karlsruhe findest du hier:",
+        "Du möchtest an der Hochschule Karlsruhe studieren und erfüllst die sprachlichen Zugangsvoraussetzungen, aber dein ausländischer Schulabschluss berechtigt dich nicht zum direkten Hochschulzugang in Deutschland?\n Dann könnte unsere hochschulindividuelle Zugangsprüfung (HZP) genau das Richtige für dich sein!\n\n Mit der HZP bietet dir die Hochschule Karlsruhe eine Alternative zum Studienkolleg und zur Feststellungsprüfung. Dabei kannst du deine Eignung für dein Wunschstudium durch den Studieneignungstest TestAS und eine mündliche Prüfung unter Beweis stellen. Wenn du die HZP erfolgreich bestehst, erhältst du eine Studienberechtigung für deinen Wunschstudiengang an der Hochschule Karlsruhe. So kannst du deinen Weg ins Studium auch ohne den Besuch eines Studienkollegs beginnen.\n\n Weiterführende Informationen zur HZP an der Hochschule Karlsruhe findest du unter dem Link unten oder du schreibst uns eine E-Mail an <a href='mailto:beratungifs@h-ka.de'>beratungifs@h-ka.de</a>.",
       farbe: "#d72305",
 	  link: "bilder/platzhalter.gif",
 	  linkText: "Weiterführende Informationen"
